@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Meu Site Pessoal</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome (para ícones) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Estilo geral do site */
+    body {
+      background-color: #000000; /* Fundo preto */
+      color: #ffffff; /* Texto branco */
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar */
+    .navbar {
+      padding: 5px 15px;
+      background-color: #000000; /* Navbar preta */
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+      color: #ffffff; /* Texto da navbar branco */
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 0.9rem;
+      color: #ffffff; /* Links da navbar brancos */
+    }
+
+    /* Seção Hero */
+    .hero-section {
+      background-color: #000000; /* Fundo preto */
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    /* Seção Foto */
+    #foto {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px; /* Espaço para a navbar fixa */
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #foto img {
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #ffffff; /* Borda branca */
+      box-shadow: 0 4px 30px #000000;
+    }
+
+    #foto h1 {
+      color: #ffffff; /* Texto branco */
+      margin-bottom: 20px;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    /* Seção Sobre Mim - Centralizar conteúdo */
+    #sobre-mim {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #ffffff; /* Fundo branco */
+      color: #000000; /* Texto preto */
+    }
+
+    #sobre-mim h1 {
+      font-size: 2.5rem;
+      color: #000000; /* Cabeçalho preto */
+    }
+
+    #sobre-mim p {
+      font-size: 1rem;
+      color: #333; /* Texto cinza */
+      margin-bottom: 15px;
+    }
+
+    /* Seção Projetos */
+    #projetos {
+      background-color: #000000; /* Fundo preto */
+      color: white;
+      padding: 60px 20px;
+    }
+
+    #projetos h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      color: #ffffff; /* Cabeçalho branco */
+      text-align: center;
+    }
+
+    .projetos-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .projeto {
+      background-color: #ffffff; /* Fundo branco */
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projeto:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .projeto h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #000000; /* Texto preto */
+    }
+
+    .projeto p {
+      color: #555; /* Texto cinza */
+      margin-bottom: 15px;
+    }
+
+    .projeto a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #007bff; /* Link azul */
+      transition: color 0.3s ease;
+    }
+
+    .projeto a:hover {
+      color: #0056b3; /* Link azul escuro */
+    }
+
+    /* Seção de Contato */
+    #contact {
+      background-color: #000000; /* Fundo preto */
+      color: white;
+      padding: 60px 20px;
+    }
+
+    #contact h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+      font-weight: 600;
+      color: #ffffff; /* Cabeçalho branco */
+    }
+
+    footer {
+      background-color: #000000; /* Fundo preto */
+      color: #ffffff; /* Texto branco */
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-content p {
+      font-size: 1rem;
+      color: #ccc; /* Texto cinza */
+    }
+
+    .social-icons a {
+      color: #ffffff; /* Ícones sociais brancos */
+      font-size: 24px;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      color: #ddd; /* Ícones sociais cinza claro */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">guigraff</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sobre-mim">Sobre Mim</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#projetos">Projetos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Seção Hero -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <h1>Meu Portfólio!</h1>
+      <p>Bem-vindo ao meu espaço, onde compartilho um pouco sobre mim e meus projetos.</p>
+    </div>
+  </section>
+
+  <!-- Seção Foto -->
+  <section id="foto">
+    <h1>GuiGraff</h1>
+    <img src="img/guigraff.png" alt="Foto de perfil" class="img-fluid rounded-circle">
+  </section>
+
+  <!-- Seção Sobre Mim -->
+  <section id="sobre-mim">
+    <h1>SOBRE MIM</h1>
+    <p>Meu nome é Guilherme Antunes Torres, tenho 17 anos, nasci em Joinville, e estou cursando Desenvolvimento de Sistemas.</p>
+    <p>Tenho o objetivo de concluir o curso e entrar na faculdade de Ciências da Computação.</p>
+
+    <h3>Habilidades</h3>
+    <p>Tenho conhecimento básico em HTML, CSS e Python.</p>
+
+    <h3>Formação Acadêmica</h3>
+    <p>Estou terminando o ensino médio e cursando Desenvolvimento de Sistemas.</p>
+
+    <h3>Experiência Profissional</h3>
+    <p>Ainda não tenho experiência profissional.</p>
+  </section>
+
+  <!-- Seção Projetos -->
+  <section id="projetos">
+    <h2>Meus Projetos</h2>
+    <div class="projetos-container">
+      <div class="projeto">
+        <h3>Projeto 1</h3>
+        <p>Esse projeto foi um site para gerenciamento de estoque para uma loja de bicicletas.</p>
+        <a href="https://github.com/guiigraff/projetositedebicicleta" target="_blank">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <h3>Projeto 2</h3>
+        <p>Em breve</p>
+        <a href="https://github.com/guiigraff" target="_blank">Ver mais</a>
+      </div>
+      <div class="projeto">
+        <h3>Projeto 3</h3>
+        <p>Em breve</p>
+        <a href="https://github.com/guiigraff/" target="_blank">Ver mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Contato -->
+  <section id="contact" class="bg-dark text-white py-5">
+    <div class="container text-center">
+      <h2 class="section-title">Entre em Contato</h2>
+      <p>Se você quiser conversar, fique à vontade para me enviar uma mensagem!</p>
+
+      <!-- Formulário de Contato -->
+      <form action="seu-script-de-processamento.php" method="POST">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Seu nome" required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">E-mail</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Seu e-mail" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Mensagem</label>
+          <textarea class="form-control" id="message" name="message" rows="4" placeholder="Sua mensagem" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-light">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Guilherme Antunes Torres. Todos os direitos reservados.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/vinicius-pinheiro" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/guiigraff" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:guigraff@icloud.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
